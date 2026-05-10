@@ -27,7 +27,6 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             box-sizing: border-box;
-            position: relative;
         }
 
         .container {
@@ -87,113 +86,6 @@
             font-size: 12px;
             color: var(--text-main);
             max-width: 460px;
-        }
-
-        .lang-toggle {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            z-index: 1400;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            padding: 4px;
-            border: 1px solid rgba(97, 175, 239, 0.32);
-            border-radius: 999px;
-            background: rgba(21, 25, 32, 0.88);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
-        }
-
-        .lang-toggle-btn {
-            appearance: none;
-            -webkit-appearance: none;
-            min-height: 32px;
-            padding: 0 12px;
-            border: 1px solid transparent;
-            border-radius: 999px;
-            background: transparent;
-            color: var(--text-main);
-            cursor: pointer;
-            font: inherit;
-            font-size: 12px;
-            font-weight: bold;
-            line-height: 1;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-            position: relative;
-        }
-
-        .lang-toggle-btn:hover {
-            color: #fff;
-            border-color: rgba(97, 175, 239, 0.4);
-        }
-
-        .lang-toggle-btn.active {
-            color: #11161d;
-            border-color: rgba(97, 175, 239, 0.92);
-            background: linear-gradient(135deg, rgba(97, 175, 239, 0.98), rgba(152, 195, 121, 0.92));
-            box-shadow: 0 0 0 1px rgba(97, 175, 239, 0.18);
-        }
-
-        .lang-toggle-btn:disabled {
-            cursor: wait;
-            opacity: 0.72;
-        }
-
-        .lang-toggle-btn.busy {
-            opacity: 0.78;
-            cursor: progress;
-            padding-left: 30px;
-        }
-
-        .lang-toggle-btn.busy::before {
-            content: '';
-            position: absolute;
-            left: 11px;
-            top: 50%;
-            width: 10px;
-            height: 10px;
-            border: 2px solid currentColor;
-            border-right-color: transparent;
-            border-radius: 50%;
-            transform: translateY(-50%);
-            animation: lang-toggle-spin 0.75s linear infinite;
-        }
-
-        .lang-toggle-btn.busy::after {
-            content: '...';
-            display: inline-block;
-            width: 0;
-            margin-left: 2px;
-            font-size: 11px;
-            letter-spacing: 0.04em;
-            overflow: hidden;
-            vertical-align: bottom;
-            animation: lang-toggle-dots 1.1s steps(4, end) infinite;
-        }
-
-        @keyframes lang-toggle-spin {
-            to {
-                transform: translateY(-50%) rotate(360deg);
-            }
-        }
-
-        @keyframes lang-toggle-dots {
-            0%,
-            20% {
-                width: 0;
-            }
-            40% {
-                width: 0.38em;
-            }
-            60% {
-                width: 0.76em;
-            }
-            80%,
-            100% {
-                width: 1.14em;
-            }
         }
 
         .tab-btn {
@@ -295,24 +187,6 @@
             position: relative;
         }
 
-        .command-modal-content {
-            max-width: 760px;
-        }
-
-        .run-command-block {
-            margin: 12px 0 18px;
-            padding: 14px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            background: var(--bg-panel);
-            color: var(--text-main);
-            font-family: monospace;
-            font-size: 13px;
-            line-height: 1.55;
-            white-space: pre-wrap;
-            word-break: break-word;
-        }
-
         .close-btn {
             color: var(--text-muted);
             float: right;
@@ -402,18 +276,6 @@
             .charts-grid {
                 grid-template-columns: 1fr;
             }
-
-            .lang-toggle {
-                top: 12px;
-                right: 12px;
-                padding: 3px;
-            }
-
-            .lang-toggle-btn {
-                min-height: 30px;
-                padding: 0 10px;
-                font-size: 11px;
-            }
         }
 
         .loading {
@@ -443,7 +305,7 @@
         .entry-link-btn:hover {
             border-color: var(--accent-blue);
             color: #fff;
-            transform: translateY(-1px);
+            transform: translateY(-1);
         }
 
         button.entry-link-btn {
@@ -468,7 +330,7 @@
             border-color: #61afef;
             color: #fff;
             background: linear-gradient(135deg, rgba(97, 175, 239, 0.34), rgba(97, 175, 239, 0.14));
-            transform: translateY(-1px);
+            transform: translateY(-1);
         }
 
         #manualViewToggleBtn.active {
@@ -689,34 +551,10 @@
             white-space: nowrap;
         }
 
-        .btn-run-command {
-            background: transparent;
-            color: var(--accent-yellow);
-            border: 1px solid var(--accent-yellow);
-            padding: 3px 6px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 9px;
-            min-height: 22px;
-            line-height: 1.1;
-            white-space: nowrap;
-        }
-
-        .btn-run-command:hover {
-            background: rgba(229, 192, 123, 0.12);
-        }
-
         .col-notes {
             width: 9%;
             min-width: 120px;
             max-width: 160px;
-        }
-
-        .col-command {
-            width: 92px;
-            min-width: 92px;
-            max-width: 110px;
-            text-align: center;
         }
 
         .col-source-tags {
@@ -979,14 +817,14 @@
             .col-share-id,
             .col-user,
             .col-notes,
-            .col-command,
             .col-source-tags,
             .col-concurrency {
                 display: none;
             }
 
             .col-model,
-            .col-config {
+            .col-config,
+            .col-price {
                 white-space: normal;
                 word-break: break-word;
                 line-height: 1.28;
@@ -1006,20 +844,9 @@
                 color: var(--text-muted);
             }
 
-            .col-source-tags {
-                width: 18%;
-                min-width: 110px;
-                white-space: normal;
-                word-break: break-word;
-                line-height: 1.3;
-                vertical-align: top;
-                color: var(--text-muted);
-            }
-
-            .col-prefill,
-            .col-decode {
+            .col-price {
                 width: 16%;
-                min-width: 54px;
+                min-width: 60px;
                 text-align: right;
                 font-variant-numeric: tabular-nums;
             }
@@ -1192,18 +1019,6 @@
             font-size: 10px;
         }
 
-        body.force-mobile-view .lang-toggle {
-            top: 12px;
-            right: 12px;
-            padding: 3px;
-        }
-
-        body.force-mobile-view .lang-toggle-btn {
-            min-height: 30px;
-            padding: 0 10px;
-            font-size: 11px;
-        }
-
         body.force-mobile-view .community-meta {
             font-size: 10px;
             line-height: 1.25;
@@ -1328,14 +1143,15 @@
         body.force-mobile-view .col-share-id,
         body.force-mobile-view .col-user,
         body.force-mobile-view .col-notes,
-        body.force-mobile-view .col-command,
         body.force-mobile-view .col-source-tags,
         body.force-mobile-view .col-concurrency {
             display: none;
         }
 
         body.force-mobile-view .col-model,
-        body.force-mobile-view .col-config {
+        body.force-mobile-view .col-config,
+        body.force-mobile-view .col-price,
+        body.force-mobile-view .col-value-for-money {
             white-space: normal;
             word-break: break-word;
             line-height: 1.28;
@@ -1344,15 +1160,60 @@
 
         body.force-mobile-view .col-model {
             width: 24%;
-            min-width: 72px;
+            min-width: 78px;
             font-size: 11px;
         }
 
         body.force-mobile-view .col-config {
             width: 28%;
-            min-width: 82px;
+            min-width: 90px;
             font-size: 10px;
             color: var(--text-muted);
+        }
+
+        body.force-mobile-view .col-price {
+            width: 16%;
+            min-width: 80px;
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        body.force-mobile-view .col-value-for-money {
+            width: 16%;
+            min-width: 80px;
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .col-prefill,
+        .col-decode {
+            width: 92px;
+            min-width: 92px;
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .col-price {
+            width: 100px;
+            min-width: 100px;
+            text-align: right;
+        }
+
+        .col-value-for-money {
+            width: 100px;
+            min-width: 100px;
+            text-align: right;
+        }
+
+        .col-actions {
+            width: 16%;
+            min-width: 54px;
+            text-align: center;
+            position: sticky;
+            right: 0;
+            background: var(--bg-panel);
+            z-index: 3;
+            white-space: nowrap;
         }
 
         body.force-mobile-view .col-prefill,
@@ -1538,13 +1399,31 @@
         body.force-desktop-view .col-model,
         body.force-desktop-view .col-config,
         body.force-desktop-view .col-notes,
-        body.force-desktop-view .col-command,
         body.force-desktop-view .col-source-tags,
         body.force-desktop-view .col-concurrency,
         body.force-desktop-view .col-prefill,
         body.force-desktop-view .col-decode,
+        body.force-desktop-view .col-price,
+        body.force-desktop-view .col-value-for-money,
         body.force-desktop-view .col-actions {
             display: table-cell !important;
+        }
+
+        body.force-desktop-view .col-rank {
+            width: 74px;
+            min-width: 74px;
+        }
+
+        body.force-desktop-view .col-price {
+            width: 100px;
+            min-width: 100px;
+            text-align: right;
+        }
+
+        body.force-desktop-view .col-value-for-money {
+            width: 100px;
+            min-width: 100px;
+            text-align: right;
         }
 
         body.force-desktop-view .col-model,
@@ -1560,11 +1439,6 @@
             min-width: 60px;
             font-size: inherit;
             color: inherit;
-        }
-
-        body.force-desktop-view .col-rank {
-            width: 74px;
-            min-width: 74px;
         }
 
         body.force-desktop-view .col-prefill,
@@ -1600,10 +1474,6 @@
 </head>
 
 <body>
-    <div class="lang-toggle" data-translate-skip="true" aria-label="Page language switch">
-        <button id="langToggleZh" class="lang-toggle-btn active" type="button" onclick="switchPageLanguage('zh-CN')">中文</button>
-        <button id="langToggleEn" class="lang-toggle-btn" type="button" onclick="switchPageLanguage('en')">English</button>
-    </div>
 
     <div class="container">
         <h1>LLM Speed Test 🏆 排行榜</h1>
@@ -1691,8 +1561,14 @@
                         <th class="col-user">用户</th>
                         <th class="col-model">模型</th>
                         <th class="col-config">硬件 / 框架 / 量化</th>
+                        <th class="col-price">价格</th>
+                        <th id="sortHeader-value_for_money" class="sortable-header col-value-for-money" aria-sort="none">
+                            <button type="button" class="sort-toggle" onclick="toggleSort('value_for_money')">
+                                <span class="sort-label">性价比</span>
+                                <span id="sortIndicator-value_for_money" class="sort-indicator">↕</span>
+                            </button>
+                        </th>
                         <th class="col-notes">备注</th>
-                        <th class="col-command" data-translate-skip="true" data-run-command-label="true">启动命令</th>
                         <th class="col-source-tags">Source / Tags</th>
                         <th class="col-concurrency">并发</th>
                         <th id="sortHeader-max_prefill_speed" class="sortable-header col-prefill" aria-sort="none">
@@ -1743,25 +1619,13 @@
         </div>
     </div>
 
-    <!-- 启动命令模态框 -->
-    <div id="runCommandModal" class="modal">
-        <div class="modal-content command-modal-content">
-            <span class="close-btn" onclick="closeRunCommandModal()">&times;</span>
-            <h2 id="runCommandModalTitle" data-translate-skip="true" style="color:var(--accent-yellow); margin-top:0;">启动命令</h2>
-            <div id="runCommandModalSubtitle" style="color:var(--text-muted); font-size:13px;"></div>
-            <pre id="runCommandText" class="run-command-block" data-translate-skip="true"></pre>
-            <button id="copyRunCommandBtn" class="btn-run-command" onclick="copyRunCommand()"
-                data-translate-skip="true" style="font-size:12px; padding:7px 12px;">复制命令</button>
-        </div>
-    </div>
-
     <script>
         const SUPABASE_URL = 'https://cvezaerrczywfzqcaqmx.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN2ZXphZXJyY3p5d2Z6cWNhcW14Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI0Nzc0OTAsImV4cCI6MjA4ODA1MzQ5MH0.-9l2Wcj38m6xh9sz9qMdhdNbnAZ_XoFBSHPhEud9DmQ';
         const SB_HEADERS = { apikey: SUPABASE_KEY, Authorization: 'Bearer ' + SUPABASE_KEY };
         const USER_CODE_KEY = 'llm_speedtest_user_code';
 
-        const SORTABLE_FIELDS = ['created_at', 'max_prefill_speed', 'max_decode_speed'];
+        const SORTABLE_FIELDS = ['created_at', 'max_prefill_speed', 'max_decode_speed', 'value_for_money'];  // 添加性价比字段
         const LEADERBOARD_SCHEMA = { MODERN: 'modern', LEGACY: 'legacy' };
         let currentSchemaMode = LEADERBOARD_SCHEMA.MODERN;
         const DEFAULT_MODEL_TAG_MIN_COUNT = 3;
@@ -1794,41 +1658,6 @@
         let forceDesktopView = !isLikelyMobileClient;
         let wasMobileViewport = manualMobileView;
         let mobileFiltersCollapsed = false;
-        const PAGE_LANGUAGE = { ZH: 'zh-CN', EN: 'en' };
-        const PAGE_LANGUAGE_STORAGE_KEY = 'llm_speedtest_page_language';
-        const TRANSLATION_CACHE_STORAGE_KEY = 'llm_speedtest_translation_cache_v1';
-        const TRANSLATION_CACHE_MAX_ITEMS = 2000;
-        const TRANSLATE_SEPARATOR_MARKER = '908271645029';
-        const TRANSLATE_SEPARATOR = `\n[[${TRANSLATE_SEPARATOR_MARKER}]]\n`;
-        const TRANSLATABLE_ATTRS = ['title', 'placeholder', 'aria-label'];
-        const PREFER_EDGE_NATIVE_TRANSLATOR = false;
-        const TRANSLATION_BATCH_MAX_ENCODED_LENGTH = 3200;
-        const MYMEMORY_MAX_QUERY_CHARS = 420;
-        const MYMEMORY_REQUEST_SPACING_MS = 1400;
-        const MYMEMORY_RETRY_DELAYS_MS = [3000, 6000, 12000];
-        const TRANSLATION_AUTO_RETRY_COOLDOWN_MS = 60000;
-        const CHINESE_TEXT_RE = /[\u3400-\u9FFF\uF900-\uFAFF]/;
-        const ORIGINAL_DOCUMENT_TITLE = document.title;
-        const textNodeOriginalMap = new WeakMap();
-        const translatedTextNodeSet = new WeakSet();
-        const elementAttributeOriginalMap = new WeakMap();
-        const translatedElementAttrsMap = new WeakMap();
-        const translationCache = new Map();
-        let currentPageLanguage = PAGE_LANGUAGE.ZH;
-        let translationObserver = null;
-        let translationScheduled = false;
-        let translationGeneration = 0;
-        let isApplyingTranslations = false;
-        let translationProviderLabel = '';
-        let translationLastErrorMessage = '';
-        let translationCachePersistTimer = null;
-        let translationRetryCooldownUntil = 0;
-        let myMemoryNextRequestAt = 0;
-        let activeTranslationPromise = null;
-        let translationNeedsRerun = false;
-        let languageToggleBusy = false;
-        let edgeTranslatorSession = null;
-        let edgeTranslatorPromise = null;
 
         // Chart instances
         let charts = {
@@ -1837,7 +1666,6 @@
             ttft: null,
             itl: null
         };
-        let activeRunCommand = '';
 
         function getShareIdFromUrl() {
             const params = new URLSearchParams(window.location.search || '');
@@ -1850,879 +1678,6 @@
             const parsed = parseInt(raw, 10);
             if (!Number.isFinite(parsed) || parsed < 1) return DEFAULT_MODEL_TAG_MIN_COUNT;
             return parsed;
-        }
-
-        function getBrowserPreferredPageLanguage() {
-            const preferredLanguages = Array.isArray(navigator.languages) && navigator.languages.length
-                ? navigator.languages
-                : [navigator.language, navigator.userLanguage].filter(Boolean);
-            const primaryLanguage = String(preferredLanguages.find((lang) => typeof lang === 'string' && lang.trim()) || '').trim();
-            return /^zh\b/i.test(primaryLanguage) ? PAGE_LANGUAGE.ZH : PAGE_LANGUAGE.EN;
-        }
-
-        function getStoredPageLanguage() {
-            try {
-                const storedLanguage = localStorage.getItem(PAGE_LANGUAGE_STORAGE_KEY);
-                if (storedLanguage === PAGE_LANGUAGE.EN || storedLanguage === PAGE_LANGUAGE.ZH) {
-                    return storedLanguage;
-                }
-            } catch (_) {
-                return getBrowserPreferredPageLanguage();
-            }
-            return getBrowserPreferredPageLanguage();
-        }
-
-        function persistPageLanguage() {
-            try {
-                localStorage.setItem(PAGE_LANGUAGE_STORAGE_KEY, currentPageLanguage);
-            } catch (_) {
-                // Ignore storage failures in privacy mode or restricted environments.
-            }
-        }
-
-        function loadPersistedTranslationCache() {
-            try {
-                const raw = localStorage.getItem(TRANSLATION_CACHE_STORAGE_KEY);
-                if (!raw) return;
-
-                const parsed = JSON.parse(raw);
-                if (!Array.isArray(parsed)) return;
-
-                parsed.forEach((entry) => {
-                    if (!Array.isArray(entry) || entry.length < 2) return;
-                    const [sourceText, translatedText] = entry;
-                    if (typeof sourceText !== 'string' || typeof translatedText !== 'string') return;
-                    translationCache.set(sourceText, translatedText);
-                });
-            } catch (_) {
-                // Ignore invalid cache payloads.
-            }
-        }
-
-        function persistTranslationCacheNow() {
-            try {
-                const entries = Array.from(translationCache.entries()).slice(-TRANSLATION_CACHE_MAX_ITEMS);
-                localStorage.setItem(TRANSLATION_CACHE_STORAGE_KEY, JSON.stringify(entries));
-            } catch (_) {
-                // Ignore storage quota or privacy-mode failures.
-            }
-        }
-
-        function schedulePersistTranslationCache() {
-            if (translationCachePersistTimer) return;
-
-            translationCachePersistTimer = window.setTimeout(() => {
-                translationCachePersistTimer = null;
-                persistTranslationCacheNow();
-            }, 200);
-        }
-
-        function setTranslationCacheValue(sourceText, translatedText) {
-            if (typeof sourceText !== 'string' || !sourceText) return;
-
-            const normalizedTranslation = typeof translatedText === 'string' && translatedText
-                ? translatedText
-                : sourceText;
-
-            if (translationCache.has(sourceText)) {
-                translationCache.delete(sourceText);
-            }
-            translationCache.set(sourceText, normalizedTranslation);
-
-            while (translationCache.size > TRANSLATION_CACHE_MAX_ITEMS) {
-                const oldestKey = translationCache.keys().next().value;
-                if (oldestKey === undefined) break;
-                translationCache.delete(oldestKey);
-            }
-
-            schedulePersistTranslationCache();
-        }
-
-        function containsChineseText(text) {
-            return CHINESE_TEXT_RE.test(String(text || ''));
-        }
-
-        function canUseEdgeNativeTranslator() {
-            return window.location.protocol !== 'file:';
-        }
-
-        function splitTextPadding(text) {
-            const raw = String(text || '');
-            const match = raw.match(/^(\s*)([\s\S]*?)(\s*)$/);
-            return {
-                leading: match ? match[1] : '',
-                core: match ? match[2] : raw,
-                trailing: match ? match[3] : ''
-            };
-        }
-
-        function shouldSkipElement(element) {
-            if (!(element instanceof Element)) return true;
-            const tagName = element.tagName;
-            if (['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME', 'CANVAS', 'SVG', 'MATH'].includes(tagName)) return true;
-            return !!element.closest('[data-translate-skip="true"]');
-        }
-
-        function walkTextNodes(root, callback) {
-            if (!(root instanceof Node)) return;
-            const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-            let current = walker.nextNode();
-            while (current) {
-                callback(current);
-                current = walker.nextNode();
-            }
-        }
-
-        function walkElementNodes(root, callback) {
-            if (!(root instanceof Element)) return;
-            callback(root);
-            root.querySelectorAll('*').forEach(callback);
-        }
-
-        function getElementOriginalAttrs(element) {
-            let state = elementAttributeOriginalMap.get(element);
-            if (!state) {
-                state = {};
-                elementAttributeOriginalMap.set(element, state);
-            }
-            return state;
-        }
-
-        function getElementTranslatedAttrs(element) {
-            let state = translatedElementAttrsMap.get(element);
-            if (!state) {
-                state = new Set();
-                translatedElementAttrsMap.set(element, state);
-            }
-            return state;
-        }
-
-        function getLanguageToggleTitle() {
-            if (languageToggleBusy) {
-                return translationProviderLabel
-                    ? `正在后台翻译页面，可继续操作。当前服务: ${translationProviderLabel}`
-                    : '正在后台翻译页面，可继续操作';
-            }
-
-            if (Date.now() < translationRetryCooldownUntil) {
-                return '公共翻译接口限流中，请稍后再试';
-            }
-
-            if (translationLastErrorMessage) {
-                return translationLastErrorMessage;
-            }
-
-            if (translationProviderLabel) {
-                return `当前翻译服务: ${translationProviderLabel}`;
-            }
-
-            return '切换页面语言';
-        }
-
-        function updateLanguageToggleState(isBusy = languageToggleBusy) {
-            const zhBtn = document.getElementById('langToggleZh');
-            const enBtn = document.getElementById('langToggleEn');
-            if (!zhBtn || !enBtn) return;
-
-            languageToggleBusy = !!isBusy;
-            zhBtn.classList.toggle('active', currentPageLanguage === PAGE_LANGUAGE.ZH);
-            enBtn.classList.toggle('active', currentPageLanguage === PAGE_LANGUAGE.EN);
-            zhBtn.disabled = false;
-            enBtn.disabled = false;
-            zhBtn.classList.toggle('busy', languageToggleBusy && currentPageLanguage === PAGE_LANGUAGE.ZH);
-            enBtn.classList.toggle('busy', languageToggleBusy && currentPageLanguage === PAGE_LANGUAGE.EN);
-            zhBtn.setAttribute('aria-busy', String(languageToggleBusy && currentPageLanguage === PAGE_LANGUAGE.ZH));
-            enBtn.setAttribute('aria-busy', String(languageToggleBusy && currentPageLanguage === PAGE_LANGUAGE.EN));
-
-            const title = getLanguageToggleTitle();
-            zhBtn.title = title;
-            enBtn.title = title;
-        }
-
-        function getRunCommandLabel() {
-            return currentPageLanguage === PAGE_LANGUAGE.EN ? 'Run Command' : '启动命令';
-        }
-
-        function updateRunCommandLabels() {
-            document.querySelectorAll('[data-run-command-label="true"]').forEach((element) => {
-                element.textContent = getRunCommandLabel();
-            });
-            const modalTitle = document.getElementById('runCommandModalTitle');
-            if (modalTitle) modalTitle.textContent = getRunCommandLabel();
-            const copyBtn = document.getElementById('copyRunCommandBtn');
-            if (copyBtn) copyBtn.textContent = currentPageLanguage === PAGE_LANGUAGE.EN ? 'Copy Command' : '复制命令';
-        }
-
-        function initializePageTranslation() {
-            if (translationObserver) return;
-
-            translationObserver = new MutationObserver((mutations) => {
-                if (currentPageLanguage !== PAGE_LANGUAGE.EN || isApplyingTranslations) return;
-
-                for (const mutation of mutations) {
-                    if (mutation.type === 'characterData') {
-                        schedulePageTranslation();
-                        return;
-                    }
-                    if (mutation.type === 'childList' && (mutation.addedNodes.length || mutation.removedNodes.length)) {
-                        schedulePageTranslation();
-                        return;
-                    }
-                    if (mutation.type === 'attributes' && TRANSLATABLE_ATTRS.includes(mutation.attributeName || '')) {
-                        schedulePageTranslation();
-                        return;
-                    }
-                }
-            });
-
-            translationObserver.observe(document.body, {
-                childList: true,
-                subtree: true,
-                characterData: true,
-                attributes: true,
-                attributeFilter: TRANSLATABLE_ATTRS
-            });
-        }
-
-        function schedulePageTranslation() {
-            if (currentPageLanguage !== PAGE_LANGUAGE.EN || translationScheduled) return;
-            if (Date.now() < translationRetryCooldownUntil) return;
-
-            translationScheduled = true;
-            window.setTimeout(() => {
-                translationScheduled = false;
-                translateCurrentPage(translationGeneration).catch((error) => {
-                    console.error('Scheduled page translation failed:', error);
-                });
-            }, 150);
-        }
-
-        function switchPageLanguage(nextLanguage, options = {}) {
-            const normalized = nextLanguage === PAGE_LANGUAGE.EN ? PAGE_LANGUAGE.EN : PAGE_LANGUAGE.ZH;
-            currentPageLanguage = normalized;
-            document.documentElement.lang = normalized;
-
-            if (options.persist !== false) {
-                persistPageLanguage();
-            }
-
-            translationGeneration += 1;
-            const generation = translationGeneration;
-            translationLastErrorMessage = '';
-
-            if (normalized === PAGE_LANGUAGE.ZH) {
-                translationNeedsRerun = false;
-                restoreOriginalPageText(document.body);
-                document.title = ORIGINAL_DOCUMENT_TITLE;
-                updateRunCommandLabels();
-                updateLanguageToggleState(false);
-                return;
-            }
-
-            updateRunCommandLabels();
-            updateLanguageToggleState(true);
-            translateCurrentPage(generation).catch((error) => {
-                console.error('Page translation failed:', error);
-                if (!canUseEdgeNativeTranslator() && options.showFailureAlert !== false) {
-                    console.warn('当前通过 file:// 打开页面时，公共翻译接口无法稳定一次性处理整页内容。请运行 Start_Leaderboard_Localhost.bat，再用 Edge 打开 localhost 版本后切换 English。');
-                }
-            }).finally(() => {
-                if (generation === translationGeneration) {
-                    updateLanguageToggleState(false);
-                }
-            });
-        }
-
-        function restoreOriginalPageText(root = document.body) {
-            if (!(root instanceof Node)) return;
-
-            isApplyingTranslations = true;
-            try {
-                walkTextNodes(root, (node) => {
-                    if (!textNodeOriginalMap.has(node)) return;
-                    node.nodeValue = textNodeOriginalMap.get(node);
-                    translatedTextNodeSet.delete(node);
-                });
-
-                if (root instanceof Element) {
-                    walkElementNodes(root, (element) => {
-                        const originalAttrs = elementAttributeOriginalMap.get(element);
-                        if (!originalAttrs) return;
-
-                        const translatedAttrs = translatedElementAttrsMap.get(element);
-                        Object.entries(originalAttrs).forEach(([attr, value]) => {
-                            element.setAttribute(attr, value);
-                            translatedAttrs?.delete(attr);
-                        });
-                    });
-                }
-            } finally {
-                isApplyingTranslations = false;
-            }
-        }
-
-        function buildTranslationTaskGroups(tasks) {
-            const groups = new Map();
-
-            tasks.forEach((task) => {
-                if (!groups.has(task.sourceText)) {
-                    groups.set(task.sourceText, []);
-                }
-                groups.get(task.sourceText).push(task.apply);
-            });
-
-            return groups;
-        }
-
-        function applyTranslatedTaskGroups(taskGroups, translatedMap) {
-            if (!(translatedMap instanceof Map) || translatedMap.size === 0) return;
-
-            isApplyingTranslations = true;
-            try {
-                translatedMap.forEach((translatedText, sourceText) => {
-                    const handlers = taskGroups.get(sourceText);
-                    if (handlers) {
-                        handlers.forEach((applyTranslation) => applyTranslation(translatedText));
-                    }
-                });
-
-                if (translatedMap.has(ORIGINAL_DOCUMENT_TITLE)) {
-                    document.title = translatedMap.get(ORIGINAL_DOCUMENT_TITLE) || ORIGINAL_DOCUMENT_TITLE;
-                }
-            } finally {
-                isApplyingTranslations = false;
-            }
-        }
-
-        function collectTranslationTasks(root) {
-            const tasks = [];
-            if (!(root instanceof Node)) return tasks;
-
-            walkTextNodes(root, (node) => {
-                const parent = node.parentElement;
-                if (!parent || shouldSkipElement(parent)) return;
-
-                const currentText = node.nodeValue || '';
-                if (!currentText.trim()) return;
-
-                let originalText = textNodeOriginalMap.get(node);
-                if (!originalText) {
-                    originalText = currentText;
-                    textNodeOriginalMap.set(node, originalText);
-                } else if (!translatedTextNodeSet.has(node) && containsChineseText(currentText) && currentText !== originalText) {
-                    originalText = currentText;
-                    textNodeOriginalMap.set(node, originalText);
-                }
-
-                const originalParts = splitTextPadding(originalText);
-                const cachedTranslated = translationCache.get(originalParts.core);
-                const expectedTranslated = cachedTranslated !== undefined
-                    ? `${originalParts.leading}${cachedTranslated}${originalParts.trailing}`
-                    : null;
-
-                if (translatedTextNodeSet.has(node)) {
-                    if (expectedTranslated !== null && currentText === expectedTranslated) return;
-                    if (currentText === originalText) {
-                        translatedTextNodeSet.delete(node);
-                    } else if (containsChineseText(currentText)) {
-                        originalText = currentText;
-                        textNodeOriginalMap.set(node, originalText);
-                        translatedTextNodeSet.delete(node);
-                    } else {
-                        return;
-                    }
-                }
-
-                const parts = splitTextPadding(originalText);
-                if (!containsChineseText(parts.core)) return;
-
-                tasks.push({
-                    sourceText: parts.core,
-                    apply(translatedText) {
-                        node.nodeValue = `${parts.leading}${translatedText}${parts.trailing}`;
-                        translatedTextNodeSet.add(node);
-                    }
-                });
-            });
-
-            if (root instanceof Element) {
-                walkElementNodes(root, (element) => {
-                    if (shouldSkipElement(element)) return;
-
-                    const originalAttrs = getElementOriginalAttrs(element);
-                    const translatedAttrs = getElementTranslatedAttrs(element);
-
-                    TRANSLATABLE_ATTRS.forEach((attr) => {
-                        if (!element.hasAttribute(attr)) return;
-
-                        const currentValue = element.getAttribute(attr) || '';
-                        if (!currentValue.trim()) return;
-
-                        if (!(attr in originalAttrs)) {
-                            originalAttrs[attr] = currentValue;
-                        } else if (!translatedAttrs.has(attr) && containsChineseText(currentValue) && currentValue !== originalAttrs[attr]) {
-                            originalAttrs[attr] = currentValue;
-                        }
-
-                        const originalValue = originalAttrs[attr];
-                        const expectedTranslated = translationCache.get(originalValue);
-
-                        if (translatedAttrs.has(attr)) {
-                            if (expectedTranslated !== undefined && currentValue === expectedTranslated) return;
-                            if (currentValue === originalValue) {
-                                translatedAttrs.delete(attr);
-                            } else if (containsChineseText(currentValue)) {
-                                originalAttrs[attr] = currentValue;
-                                translatedAttrs.delete(attr);
-                            } else {
-                                return;
-                            }
-                        }
-
-                        if (!containsChineseText(originalAttrs[attr])) return;
-
-                        tasks.push({
-                            sourceText: originalAttrs[attr],
-                            apply(translatedText) {
-                                element.setAttribute(attr, translatedText);
-                                translatedAttrs.add(attr);
-                            }
-                        });
-                    });
-                });
-            }
-
-            return tasks;
-        }
-
-        async function translateCurrentPage(generation = translationGeneration) {
-            if (currentPageLanguage !== PAGE_LANGUAGE.EN) return;
-
-            updateLanguageToggleState(true);
-            if (activeTranslationPromise) {
-                translationNeedsRerun = true;
-                return activeTranslationPromise;
-            }
-
-            activeTranslationPromise = (async () => {
-                try {
-                    let nextGeneration = generation;
-
-                    while (currentPageLanguage === PAGE_LANGUAGE.EN) {
-                        const requestGeneration = nextGeneration;
-                        translationNeedsRerun = false;
-                        await translateCurrentPageCore(requestGeneration);
-
-                        if (currentPageLanguage !== PAGE_LANGUAGE.EN) break;
-                        if (!translationNeedsRerun) break;
-                        if (Date.now() < translationRetryCooldownUntil) break;
-
-                        nextGeneration = translationGeneration;
-                    }
-                } finally {
-                    activeTranslationPromise = null;
-                    updateLanguageToggleState(false);
-                }
-            })();
-
-            return activeTranslationPromise;
-        }
-
-        async function translateCurrentPageCore(generation = translationGeneration) {
-            if (currentPageLanguage !== PAGE_LANGUAGE.EN) return;
-
-            const tasks = collectTranslationTasks(document.body);
-            const taskGroups = buildTranslationTaskGroups(tasks);
-            const uniqueTexts = Array.from(new Set(tasks.map(task => task.sourceText)));
-            if (containsChineseText(ORIGINAL_DOCUMENT_TITLE)) {
-                uniqueTexts.push(ORIGINAL_DOCUMENT_TITLE);
-            }
-
-            const dedupedTexts = Array.from(new Set(uniqueTexts));
-            if (!dedupedTexts.length) {
-                translationLastErrorMessage = '';
-                document.title = ORIGINAL_DOCUMENT_TITLE;
-                return;
-            }
-
-            const cachedMap = new Map();
-            dedupedTexts.forEach((text) => {
-                if (translationCache.has(text)) {
-                    cachedMap.set(text, translationCache.get(text) || text);
-                }
-            });
-
-            if (cachedMap.size) {
-                applyTranslatedTaskGroups(taskGroups, cachedMap);
-            }
-
-            const missingTexts = dedupedTexts.filter((text) => containsChineseText(text) && !cachedMap.has(text));
-            if (!missingTexts.length) {
-                translationLastErrorMessage = '';
-                if (!cachedMap.has(ORIGINAL_DOCUMENT_TITLE)) {
-                    document.title = ORIGINAL_DOCUMENT_TITLE;
-                }
-                return;
-            }
-
-            const batches = [missingTexts];
-            for (const batch of batches) {
-                if (generation !== translationGeneration || currentPageLanguage !== PAGE_LANGUAGE.EN) return;
-
-                const translatedBatch = await translateBatchWithFallbacks(batch);
-                if (generation !== translationGeneration || currentPageLanguage !== PAGE_LANGUAGE.EN) return;
-
-                const translatedMap = new Map();
-                batch.forEach((sourceText, index) => {
-                    const translatedText = translatedBatch[index] || sourceText;
-                    setTranslationCacheValue(sourceText, translatedText);
-                    translatedMap.set(sourceText, translatedText);
-                });
-
-                applyTranslatedTaskGroups(taskGroups, translatedMap);
-            }
-        }
-
-        function buildTranslationBatches(texts) {
-            const batches = [];
-            let currentBatch = [];
-            let currentEncodedLength = 0;
-
-            texts.forEach((text) => {
-                const prefix = currentBatch.length ? TRANSLATE_SEPARATOR : '';
-                const nextEncodedLength = currentEncodedLength + encodeURIComponent(prefix + text).length;
-
-                if (currentBatch.length && nextEncodedLength > TRANSLATION_BATCH_MAX_ENCODED_LENGTH) {
-                    batches.push(currentBatch);
-                    currentBatch = [text];
-                    currentEncodedLength = encodeURIComponent(text).length;
-                    return;
-                }
-
-                currentBatch.push(text);
-                currentEncodedLength = nextEncodedLength;
-            });
-
-            if (currentBatch.length) {
-                batches.push(currentBatch);
-            }
-
-            return batches;
-        }
-
-        function buildTranslationBatchesByCharLength(texts, maxChars) {
-            const batches = [];
-            let currentBatch = [];
-            let currentLength = 0;
-
-            texts.forEach((text) => {
-                const stringText = String(text || '');
-                const nextLength = currentBatch.length
-                    ? currentLength + TRANSLATE_SEPARATOR.length + stringText.length
-                    : stringText.length;
-
-                if (currentBatch.length && nextLength > maxChars) {
-                    batches.push(currentBatch);
-                    currentBatch = [stringText];
-                    currentLength = stringText.length;
-                    return;
-                }
-
-                currentBatch.push(stringText);
-                currentLength = nextLength;
-            });
-
-            if (currentBatch.length) {
-                batches.push(currentBatch);
-            }
-
-            return batches;
-        }
-
-        function splitTranslatedBatch(text, expectedCount) {
-            const exact = String(text || '').split(TRANSLATE_SEPARATOR);
-            if (exact.length === expectedCount) return exact;
-
-            const normalized = String(text || '').split(new RegExp(`\\r?\\n\\s*\\[\\[\\s*${TRANSLATE_SEPARATOR_MARKER}\\s*\\]\\]\\s*\\r?\\n`, 'i'));
-            if (normalized.length === expectedCount) return normalized;
-
-            throw new Error(`Translated batch size mismatch: expected ${expectedCount}, got ${exact.length}`);
-        }
-
-        function isMyMemoryQueryTooLong(text) {
-            return /QUERY LENGTH LIMIT EXCEEDED/i.test(String(text || ''));
-        }
-
-        function splitBatchInHalf(batch) {
-            const middle = Math.ceil(batch.length / 2);
-            return [batch.slice(0, middle), batch.slice(middle)];
-        }
-
-        function splitLongTextForTranslation(text, maxChars) {
-            const source = String(text || '');
-            if (source.length <= maxChars) return [source];
-
-            const chunks = [];
-            let remaining = source;
-
-            while (remaining.length > maxChars) {
-                let splitIndex = remaining.lastIndexOf('\n', maxChars);
-                if (splitIndex < maxChars * 0.4) {
-                    splitIndex = Math.max(
-                        remaining.lastIndexOf('。', maxChars),
-                        remaining.lastIndexOf('！', maxChars),
-                        remaining.lastIndexOf('？', maxChars),
-                        remaining.lastIndexOf('；', maxChars),
-                        remaining.lastIndexOf('，', maxChars),
-                        remaining.lastIndexOf(',', maxChars),
-                        remaining.lastIndexOf(' ', maxChars)
-                    );
-                }
-                if (splitIndex < maxChars * 0.4) {
-                    splitIndex = maxChars;
-                }
-
-                chunks.push(remaining.slice(0, splitIndex));
-                remaining = remaining.slice(splitIndex);
-            }
-
-            if (remaining) {
-                chunks.push(remaining);
-            }
-
-            return chunks;
-        }
-
-        function isTranslationRateLimitError(error) {
-            const message = String(error?.message || error || '');
-            return /HTTP 429|rate limit|too many requests/i.test(message);
-        }
-
-        function setTranslationRetryCooldown(ms = TRANSLATION_AUTO_RETRY_COOLDOWN_MS) {
-            translationRetryCooldownUntil = Date.now() + ms;
-            updateLanguageToggleState();
-        }
-
-        function clearTranslationRetryCooldown() {
-            translationRetryCooldownUntil = 0;
-        }
-
-        function waitForMs(ms) {
-            return new Promise((resolve) => window.setTimeout(resolve, ms));
-        }
-
-        function bindPublicTranslationProgressiveEvents() {
-            const onProgressiveTrigger = () => {
-                if (currentPageLanguage !== PAGE_LANGUAGE.EN) return;
-                schedulePageTranslation();
-            };
-
-            window.addEventListener('scroll', onProgressiveTrigger, { passive: true });
-            window.addEventListener('touchmove', onProgressiveTrigger, { passive: true });
-        }
-
-        async function translateTextArray(texts, generation = translationGeneration) {
-            const normalizedTexts = texts.map(text => String(text || ''));
-            const missingTexts = normalizedTexts.filter(text => containsChineseText(text) && !translationCache.has(text));
-
-            if (missingTexts.length) {
-                const batches = buildTranslationBatches(Array.from(new Set(missingTexts)));
-
-                for (const batch of batches) {
-                    if (generation !== translationGeneration || currentPageLanguage !== PAGE_LANGUAGE.EN) break;
-                    const translatedBatch = await translateBatchWithFallbacks(batch);
-                    batch.forEach((sourceText, index) => {
-                        setTranslationCacheValue(sourceText, translatedBatch[index] || sourceText);
-                    });
-                }
-            }
-
-            return normalizedTexts.map(text => translationCache.get(text) || text);
-        }
-
-        async function translateBatchWithFallbacks(batch) {
-            const providers = [
-                { label: 'MyMemory Public API', run: translateBatchWithMyMemory },
-                { label: 'Google Translate Public API', run: translateBatchWithGoogle }
-            ];
-
-            if (canUseEdgeNativeTranslator()) {
-                const edgeProvider = { label: 'Microsoft Edge Translator', run: translateBatchWithEdgeNative };
-                if (PREFER_EDGE_NATIVE_TRANSLATOR) {
-                    providers.unshift(edgeProvider);
-                } else {
-                    providers.push(edgeProvider);
-                }
-            }
-
-            const errors = [];
-
-            for (const provider of providers) {
-                try {
-                    const translated = await provider.run(batch);
-                    if (!Array.isArray(translated) || translated.length !== batch.length) {
-                        throw new Error(`Invalid translation batch from ${provider.label}`);
-                    }
-                    translationProviderLabel = provider.label;
-                    translationLastErrorMessage = '';
-                    clearTranslationRetryCooldown();
-                    return translated;
-                } catch (error) {
-                    errors.push(`${provider.label}: ${error.message}`);
-                }
-            }
-
-            let message = errors.join(' | ');
-            if (!canUseEdgeNativeTranslator()) {
-                message += ' | file:// 下公共翻译接口受限，建议改用 localhost 打开页面以启用 Edge 原生整页翻译';
-            }
-            const finalError = new Error(message);
-            translationLastErrorMessage = message;
-            if (isTranslationRateLimitError(finalError)) {
-                setTranslationRetryCooldown();
-            }
-            throw finalError;
-        }
-
-        async function getEdgeTranslatorSession() {
-            if (!canUseEdgeNativeTranslator()) {
-                throw new Error('Translator API disabled on file:// pages');
-            }
-
-            if (edgeTranslatorSession) return edgeTranslatorSession;
-            if (edgeTranslatorPromise) return edgeTranslatorPromise;
-
-            const TranslatorCtor = window.Translator || self.Translator;
-            if (!TranslatorCtor || typeof TranslatorCtor.create !== 'function' || typeof TranslatorCtor.availability !== 'function') {
-                throw new Error('Translator API unavailable');
-            }
-
-            edgeTranslatorPromise = (async () => {
-                const availability = await TranslatorCtor.availability({
-                    sourceLanguage: 'zh-Hans',
-                    targetLanguage: 'en'
-                });
-
-                if (availability === 'unavailable' || availability === false) {
-                    throw new Error('zh-Hans -> en not available');
-                }
-
-                return TranslatorCtor.create({
-                    sourceLanguage: 'zh-Hans',
-                    targetLanguage: 'en'
-                });
-            })();
-
-            try {
-                edgeTranslatorSession = await edgeTranslatorPromise;
-                return edgeTranslatorSession;
-            } catch (error) {
-                edgeTranslatorPromise = null;
-                throw error;
-            }
-        }
-
-        async function runWithConcurrency(items, concurrency, worker) {
-            const results = new Array(items.length);
-            let cursor = 0;
-
-            async function consume() {
-                while (cursor < items.length) {
-                    const index = cursor++;
-                    results[index] = await worker(items[index], index);
-                }
-            }
-
-            const workers = Array.from({ length: Math.max(1, Math.min(concurrency, items.length)) }, () => consume());
-            await Promise.all(workers);
-            return results;
-        }
-
-        async function translateBatchWithEdgeNative(batch) {
-            const translator = await getEdgeTranslatorSession();
-            const translated = await translator.translate(batch.join(TRANSLATE_SEPARATOR));
-            const translatedText = typeof translated === 'string' ? translated : String(translated || batch.join(TRANSLATE_SEPARATOR));
-            return splitTranslatedBatch(translatedText, batch.length);
-        }
-
-        async function translateBatchWithMyMemory(batch) {
-            const joinedText = batch.join(TRANSLATE_SEPARATOR);
-            if (joinedText.length > MYMEMORY_MAX_QUERY_CHARS) {
-                throw new Error('Single-shot public translation exceeds MyMemory length limit');
-            }
-            return translateBatchWithMyMemoryRequest(batch);
-        }
-
-        async function translateBatchWithMyMemoryRequest(batch) {
-            const url = new URL('https://api.mymemory.translated.net/get');
-            url.searchParams.set('q', batch.join(TRANSLATE_SEPARATOR));
-            url.searchParams.set('langpair', 'zh-CN|en');
-
-            let lastError = null;
-
-            for (let attempt = 0; attempt <= MYMEMORY_RETRY_DELAYS_MS.length; attempt++) {
-                const now = Date.now();
-                const waitMs = Math.max(0, myMemoryNextRequestAt - now);
-                if (waitMs > 0) {
-                    await waitForMs(waitMs);
-                }
-
-                myMemoryNextRequestAt = Date.now() + MYMEMORY_REQUEST_SPACING_MS;
-
-                const response = await fetch(url.toString());
-                if (response.ok) {
-                    const payload = await response.json();
-                    const translatedText = payload?.responseData?.translatedText
-                        ? String(payload.responseData.translatedText)
-                        : batch.join(TRANSLATE_SEPARATOR);
-
-                    if (isMyMemoryQueryTooLong(translatedText)) {
-                        throw new Error(translatedText);
-                    }
-
-                    if (batch.length === 1) {
-                        return [translatedText];
-                    }
-
-                    return splitTranslatedBatch(translatedText, batch.length);
-                }
-
-                lastError = new Error(`HTTP ${response.status}`);
-                if (response.status !== 429 || attempt >= MYMEMORY_RETRY_DELAYS_MS.length) {
-                    throw lastError;
-                }
-
-                await waitForMs(MYMEMORY_RETRY_DELAYS_MS[attempt]);
-            }
-
-            throw lastError || new Error('MyMemory translation failed');
-        }
-
-        async function translateBatchWithGoogle(batch) {
-            const url = new URL('https://translate.googleapis.com/translate_a/single');
-            url.searchParams.set('client', 'gtx');
-            url.searchParams.set('sl', 'zh-CN');
-            url.searchParams.set('tl', 'en');
-            url.searchParams.append('dt', 't');
-            url.searchParams.set('q', batch.join(TRANSLATE_SEPARATOR));
-
-            const response = await fetch(url.toString());
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
-            }
-
-            const payload = await response.json();
-            const segments = Array.isArray(payload?.[0]) ? payload[0] : [];
-            const translatedText = segments.map(segment => Array.isArray(segment) ? (segment[0] || '') : '').join('');
-            return splitTranslatedBatch(translatedText, batch.length);
-        }
-
-        async function translateUiString(text, generation = translationGeneration) {
-            if (!containsChineseText(text) || currentPageLanguage !== PAGE_LANGUAGE.EN) {
-                return text;
-            }
-            const [translated] = await translateTextArray([text], generation);
-            return translated || text;
         }
 
         function updateModelTagSubtitle() {
@@ -2751,7 +1706,7 @@
             if (isLegacySchemaMode()) {
                 return 'select=id,user_code,nickname,model_name,hardware,framework,quantization,notes,concurrency,avg_prefill_speed,avg_decode_speed,results_json,created_at';
             }
-            return 'select=id,user_code,nickname,model_name,hardware,framework,quantization,notes,run_command,concurrency,avg_prefill_speed,avg_decode_speed,max_prefill_speed,max_decode_speed,source,record_tags,results_json,created_at';
+            return 'select=id,user_code,nickname,model_name,hardware,framework,quantization,notes,concurrency,avg_prefill_speed,avg_decode_speed,max_prefill_speed,max_decode_speed,source,record_tags,created_at';
         }
 
         function buildModelTagSelectFields() {
@@ -2768,8 +1723,7 @@
                 text.includes('max_prefill_speed') ||
                 text.includes('max_decode_speed') ||
                 text.includes('record_tags') ||
-                text.includes('source') ||
-                text.includes('run_command')
+                text.includes('source')
             );
         }
 
@@ -3046,7 +2000,21 @@
                     try { details = JSON.parse(details); } catch { details = []; }
                 }
                 if (!Array.isArray(details)) details = [];
-                return { ...row, results_json: details };
+                
+                // 尝试从本地存储获取价格信息
+                let localPrice = null;
+                try {
+                    const localPrices = JSON.parse(localStorage.getItem('local_prices') || '{}');
+                    localPrice = localPrices[row.id] || null;
+                } catch (e) {
+                    console.warn('读取本地价格数据出错:', e);
+                }
+                
+                return { 
+                    ...row, 
+                    results_json: details,
+                    price: row.price || localPrice // 优先使用服务器数据，否则使用本地数据
+                };
             });
         }
 
@@ -3067,6 +2035,15 @@
             if (metricKey === 'max_decode_speed') {
                 return pickDisplaySpeed(row.max_decode_speed, row.avg_decode_speed);
             }
+            // 对于性价比，我们需要计算性价比值
+            if (metricKey === 'value_for_money') {
+                if (!row.price) return NaN;
+                const actualPrice = parseFloat(row.price);
+                if (!actualPrice || actualPrice <= 0) return NaN;
+                const decodeValue = pickDisplaySpeed(row.max_decode_speed, row.avg_decode_speed);
+                if (!Number.isFinite(decodeValue) || decodeValue <= 0) return NaN;
+                return actualPrice / decodeValue; // 性价比 = 价格/速度，越低越好
+            }
             return NaN;
         }
 
@@ -3086,6 +2063,10 @@
             const aOk = Number.isFinite(aValue);
             const bOk = Number.isFinite(bValue);
             if (aOk && bOk) {
+                // 对于性价比，较小的值表示更好的性价比（更便宜的价格对应更高的速度）
+                if (currentSortKey === 'value_for_money') {
+                    return direction === 'asc' ? (aValue - bValue) : (bValue - aValue);
+                }
                 return direction === 'asc' ? (aValue - bValue) : (bValue - aValue);
             }
             if (aOk && !bOk) return -1;
@@ -3099,6 +2080,13 @@
                 primary = compareValuesWithNullLast(Date.parse(a.created_at), Date.parse(b.created_at), currentSortDirection);
             } else if (currentSortKey === 'max_prefill_speed' || currentSortKey === 'max_decode_speed') {
                 primary = compareValuesWithNullLast(getRowMetricValue(a, currentSortKey), getRowMetricValue(b, currentSortKey), currentSortDirection);
+            } else if (currentSortKey === 'value_for_money') {
+                // 使用专门的性价比计算方法
+                primary = compareValuesWithNullLast(
+                    getRowMetricValue(a, 'value_for_money'),
+                    getRowMetricValue(b, 'value_for_money'),
+                    currentSortDirection
+                );
             }
             if (primary !== 0) return primary;
             return compareValuesWithNullLast(Date.parse(a.created_at), Date.parse(b.created_at), 'desc');
@@ -3259,13 +2247,6 @@
         }
 
         window.onload = () => {
-            currentPageLanguage = getStoredPageLanguage();
-            document.documentElement.lang = currentPageLanguage;
-            loadPersistedTranslationCache();
-            initializePageTranslation();
-            updateLanguageToggleState(false);
-            updateRunCommandLabels();
-
             const pageEl = document.getElementById('pageSizeSelect');
             if (pageEl) pageEl.value = String(currentPageSize);
             updateSortIndicators();
@@ -3288,7 +2269,6 @@
             });
 
             refreshModelTags();
-            const shouldBootInEnglish = currentPageLanguage === PAGE_LANGUAGE.EN;
 
             const shareId = getShareIdFromUrl();
             if (shareId) {
@@ -3297,21 +2277,9 @@
                 const searchInput = document.getElementById('searchInput');
                 if (searchInput) searchInput.value = shareId;
                 loadLeaderboard('search_id');
-                if (shouldBootInEnglish) {
-                    translationGeneration += 1;
-                    translateCurrentPage(translationGeneration).catch((error) => {
-                        console.error('Initial page translation failed:', error);
-                    });
-                }
                 return;
             }
             loadLeaderboard('global');
-            if (shouldBootInEnglish) {
-                translationGeneration += 1;
-                translateCurrentPage(translationGeneration).catch((error) => {
-                    console.error('Initial page translation failed:', error);
-                });
-            }
         };
 
         async function loadLeaderboard(mode, resetPage = true) {
@@ -3431,12 +2399,39 @@
 
                     // Config text
                     const configText = [row.hardware, row.framework, row.quantization].filter(Boolean).map(escapeHtml).join(' / ');
+                    
+                    // 处理价格显示 - 优先使用服务器价格，其次使用本地价格
+                    let priceText = '';
+                    let actualPrice = null;
+                    if (row.price) {
+                        priceText = `<span style="color:#e5c07b; font-weight:bold;" ondblclick="enablePriceEdit('${row.id}', this)" title="双击编辑价格">${escapeHtml(row.price)}</span>`;
+                        actualPrice = parseFloat(row.price);
+                    } else {
+                        const localPrice = getLocalPrice(row.id) || '';
+                        actualPrice = localPrice ? parseFloat(localPrice) : null;
+                        priceText = `
+                            <input 
+                                type="text" 
+                                id="price_${row.id}" 
+                                value="${escapeHtml(localPrice)}" 
+                                placeholder="输入价格" 
+                                style="width:80px; background:var(--bg-panel); color:var(--text-main); border:1px solid var(--border-color); border-radius:4px; padding:2px 4px; font-size:12px;"
+                                onchange="saveLocalPrice('${row.id}', this.value)"
+                            >
+                        `;
+                    }
+                    
+                    // 计算性价比 (以decode速度为准，数值越低越好)
+                    let valueForMoneyText = '-';
+                    if (actualPrice && actualPrice > 0) {
+                        const decodeValue = pickDisplaySpeed(row.max_decode_speed, row.avg_decode_speed);
+                        if (Number.isFinite(decodeValue) && decodeValue > 0) {
+                            const valueForMoney = (actualPrice / decodeValue).toFixed(4);
+                            valueForMoneyText = `<span style="color:#61afef; font-weight:bold; text-align:right;">${valueForMoney}</span>`;
+                        }
+                    }
+                    
                     const notesText = row.notes ? escapeHtml(row.notes) : '-';
-                    const hasRunCommand = typeof row.run_command === 'string' && row.run_command.trim();
-                    const rowIdLiteral = JSON.stringify(String(row.id || ''));
-                    const runCommandCell = hasRunCommand
-                        ? `<button type="button" class="btn-run-command" data-translate-skip="true" data-run-command-label="true" onclick='openRunCommandModal(${rowIdLiteral})'>${getRunCommandLabel()}</button>`
-                        : '-';
                     const prefillValue = pickDisplaySpeed(row.max_prefill_speed, row.avg_prefill_speed);
                     const decodeValue = pickDisplaySpeed(row.max_decode_speed, row.avg_decode_speed);
                     const prefillText = Number.isFinite(prefillValue) ? prefillValue.toFixed(1) : '-';
@@ -3461,11 +2456,12 @@
                     <td class="col-user">${userDisplay}</td>
                     <td class="col-model" style="font-weight:bold;">${modelDisplay}</td>
                     <td class="col-config" style="font-size:12px;">${configText}</td>
-                    <td class="notes-cell col-notes">
+                    <td class="col-price" style="text-align:right;">${priceText}</td>
+                    <td class="col-value-for-money" style="color:#61afef; font-weight:bold; text-align:right;">${valueForMoneyText}</td>
+                    <td class="col-notes">
                         <span class="notes-text">${notesText}</span>
                         ${row.notes ? `<div class="notes-tooltip">${notesText}</div>` : ''}
                     </td>
-                    <td class="col-command">${runCommandCell}</td>
                     <td class="col-source-tags" style="font-size:11px; color:var(--text-muted); line-height:1.35;">${sourceTagsText}</td>
                     <td class="col-concurrency">${row.concurrency}</td>
                     <td class="col-prefill" style="color:#98c379; font-weight:bold;">${prefillText}</td>
@@ -3483,17 +2479,12 @@
 
                 loading.style.display = 'none';
                 table.style.display = 'table';
-                updateRunCommandLabels();
 
                 // Pagination display logic
                 pagination.style.display = 'block';
                 pageIndicator.textContent = `Page ${currentPage} / ${totalPages} | ${totalMatched} rows | ${currentPageSize}/page`;
                 btnPrev.style.display = currentPage > 1 ? 'inline-block' : 'none';
                 btnNext.style.display = (offset + data.length) < totalMatched ? 'inline-block' : 'none';
-
-                if (currentPageLanguage === PAGE_LANGUAGE.EN) {
-                    schedulePageTranslation();
-                }
 
             } catch (e) {
                 if (e.name === 'AbortError') {
@@ -3516,6 +2507,70 @@
                 .replace(/'/g, "&#039;");
         }
 
+        function saveLocalPrice(recordId, price) {
+            try {
+                const localPrices = JSON.parse(localStorage.getItem('local_prices') || '{}');
+                localPrices[recordId] = price;
+                localStorage.setItem('local_prices', JSON.stringify(localPrices));
+            } catch (e) {
+                console.error('保存本地价格数据失败:', e);
+            }
+        }
+
+        function getLocalPrice(recordId) {
+            try {
+                const localPrices = JSON.parse(localStorage.getItem('local_prices') || '{}');
+                return localPrices[recordId] || null;
+            } catch (e) {
+                console.error('读取本地价格数据失败:', e);
+                return null;
+            }
+        }
+        
+        // 新增：启用价格编辑功能
+        function enablePriceEdit(recordId, element) {
+            const currentPrice = element.textContent;
+            element.outerHTML = `<input type="text" id="price_edit_${recordId}" value="${currentPrice}" 
+                style="width:80px; background:var(--bg-panel); color:var(--text-main); border:1px solid var(--border-color); border-radius:4px; padding:2px 4px; font-size:12px;"
+                onblur="saveEditedPrice('${recordId}', this)" onkeypress="handlePriceKeyPress(event, '${recordId}', this)" />`;
+            
+            // 自动聚焦并选中文本
+            setTimeout(() => {
+                const inputElement = document.getElementById(`price_edit_${recordId}`);
+                if(inputElement) {
+                    inputElement.focus();
+                    inputElement.select();
+                }
+            }, 10);
+        }
+        
+        // 新增：保存编辑后的价格
+        function saveEditedPrice(recordId, inputElement) {
+            const newPrice = inputElement.value.trim();
+            
+            // 更新本地存储中的价格
+            try {
+                const localPrices = JSON.parse(localStorage.getItem('local_prices') || '{}');
+                localPrices[recordId] = newPrice;
+                localStorage.setItem('local_prices', JSON.stringify(localPrices));
+            } catch (e) {
+                console.error('保存本地价格数据失败:', e);
+            }
+            
+            // 重新加载当前页面以更新价格显示
+            loadLeaderboard(currentMode, false);
+        }
+        
+        // 新增：处理按键事件，支持按Enter保存
+        function handlePriceKeyPress(event, recordId, inputElement) {
+            if (event.key === 'Enter') {
+                saveEditedPrice(recordId, inputElement);
+            } else if (event.key === 'Escape') {
+                // 按ESC取消编辑，恢复原价
+                loadLeaderboard(currentMode, false);
+            }
+        }
+        
         function loadUserLeaderboard(encodedUserCode, encodedDisplayName) {
             const userCode = decodeURIComponent(encodedUserCode || '');
             const displayName = decodeURIComponent(encodedDisplayName || encodedUserCode || '');
@@ -3551,50 +2606,33 @@
             document.getElementById('chartModal').style.display = 'none';
         }
 
-        function openRunCommandModal(id) {
-            const row = resultsDataMap[id];
-            const command = typeof row?.run_command === 'string' ? row.run_command.trim() : '';
-            if (!command) return;
-
-            activeRunCommand = command;
-            updateRunCommandLabels();
-            document.getElementById('runCommandModalSubtitle').textContent =
-                `${row.model_name || '-'} | ${new Date(row.created_at).toLocaleString()}`;
-            document.getElementById('runCommandText').textContent = command;
-            document.getElementById('runCommandModal').style.display = 'block';
-        }
-
-        function closeRunCommandModal() {
-            document.getElementById('runCommandModal').style.display = 'none';
-        }
-
-        async function copyRunCommand() {
-            if (!activeRunCommand) return;
-            await navigator.clipboard.writeText(activeRunCommand);
-            const btn = document.getElementById('copyRunCommandBtn');
-            if (!btn) return;
-            btn.textContent = currentPageLanguage === PAGE_LANGUAGE.EN ? 'Copied' : '已复制';
-            setTimeout(updateRunCommandLabels, 1200);
-        }
-
         // Click outside to close
         window.onclick = function (event) {
-            const chartModal = document.getElementById('chartModal');
-            const runCommandModal = document.getElementById('runCommandModal');
-            if (event.target === chartModal) {
+            const modal = document.getElementById('chartModal');
+            if (event.target === modal) {
                 closeCharts();
-            } else if (event.target === runCommandModal) {
-                closeRunCommandModal();
             }
         }
 
-        async function viewDetails(id) {
+        function viewDetails(id) {
             const row = resultsDataMap[id];
             if (!row) return;
 
             document.getElementById('modalTitle').textContent = row.model_name;
+            
+            // 获取价格信息用于详情页显示
+            let priceInfo = '';
+            if (row.price) {
+                priceInfo = ` | 价格: ${row.price}`;
+            } else {
+                const localPrice = getLocalPrice(id);
+                if (localPrice) {
+                    priceInfo = ` | 价格: ${localPrice} (本地)`;
+                }
+            }
+            
             document.getElementById('modalSubtitle').textContent =
-                `硬件: ${row.hardware} | 并发: ${row.concurrency} | 记录时间: ${new Date(row.created_at).toLocaleString()}`;
+                `硬件: ${row.hardware} | 并发: ${row.concurrency} | 记录时间: ${new Date(row.created_at).toLocaleString()}${priceInfo}`;
 
             document.getElementById('chartModal').style.display = 'block';
 
@@ -3606,36 +2644,10 @@
                 const outputSpeed = Number(item?.output_speed ?? item?.outputSpeed ?? item?.decode_speed ?? item?.decodeSpeed);
                 const avgTtftMs = Number(item?.avg_ttft_ms ?? item?.avgTtftMs);
                 const avgItlMean = Number(item?.avg_itl_mean ?? item?.avgItlMean);
-                const concurrentDetails = Array.isArray(item?.concurrent_details)
-                    ? item.concurrent_details
-                    : (Array.isArray(item?.concurrentDetails) ? item.concurrentDetails : []);
-                const detailSuccessCount = concurrentDetails.length;
-                const concurrencyRaw = Number(item?.concurrency ?? row.concurrency);
-                const pointConcurrency = Math.max(
-                    1,
-                    Number.isFinite(concurrencyRaw) && concurrencyRaw > 0 ? concurrencyRaw : 0,
-                    detailSuccessCount
-                );
-                const successRaw = Number(item?.successful);
-                const hasStoredSuccessful = item?.successful !== undefined && item?.successful !== null && item?.successful !== '';
-                let successful = Number.isFinite(successRaw) ? successRaw : null;
-                if (detailSuccessCount > 0) {
-                    successful = Math.max(successful ?? 0, detailSuccessCount);
-                }
-                const hasMeasuredSpeed = Number.isFinite(prefillSpeed) || Number.isFinite(outputSpeed);
-                const inferredLegacySingleSuccess = hasStoredSuccessful
-                    && detailSuccessCount === 0
-                    && pointConcurrency > 1
-                    && successRaw === 1
-                    && hasMeasuredSpeed;
-                if (successful === null || inferredLegacySingleSuccess) {
-                    successful = hasMeasuredSpeed ? pointConcurrency : 0;
-                }
-                successful = Math.max(0, Math.min(pointConcurrency, Math.round(successful)));
-                const successCountIsExact = !inferredLegacySingleSuccess && (detailSuccessCount > 0
-                    || pointConcurrency === 1
-                    || (Number.isFinite(successRaw) && (successRaw === 0 || successRaw > 1 || successRaw === pointConcurrency))
-                    || (!hasStoredSuccessful && pointConcurrency === 1));
+                const successRaw = item?.successful;
+                const successful = successRaw !== undefined && successRaw !== null
+                    ? Number(successRaw)
+                    : ((Number.isFinite(prefillSpeed) || Number.isFinite(outputSpeed)) ? 1 : 0);
 
                 return {
                     ...item,
@@ -3644,22 +2656,13 @@
                     output_speed: Number.isFinite(outputSpeed) ? outputSpeed : null,
                     avg_ttft_ms: Number.isFinite(avgTtftMs) ? avgTtftMs : null,
                     avg_itl_mean: Number.isFinite(avgItlMean) ? avgItlMean : null,
-                    concurrency: pointConcurrency,
-                    successful,
-                    success_count_is_exact: successCountIsExact
+                    successful: successful ? 1 : 0
                 };
             }).sort((a, b) => (a.prompt_length ?? Number.MAX_SAFE_INTEGER) - (b.prompt_length ?? Number.MAX_SAFE_INTEGER));
 
             // ================== Build Detail Data Table ==================
             const dataContainer = document.getElementById('modalDataContainer');
-            const runCommandText = row.run_command ? escapeHtml(row.run_command) : '';
-            const runCommandHtml = runCommandText ? `
-                <div style="background:var(--bg-panel); border:1px solid var(--border-color); border-radius:6px; padding:14px; margin-bottom:16px; font-size:13px;">
-                    <div style="color:var(--text-muted); margin-bottom:8px;">启动命令 / Run Command</div>
-                    <pre style="margin:0; white-space:pre-wrap; word-break:break-word; font-family:monospace; color:var(--text-main);">${runCommandText}</pre>
-                </div>
-            ` : '';
-            let tableHtml = `${runCommandHtml}
+            let tableHtml = `
             <table style="width:100%; border-collapse:collapse; margin-bottom:20px; font-size:13px;">
                 <thead>
                     <tr style="background:var(--bg-panel);">
@@ -3684,14 +2687,7 @@
                 const itl = (r.avg_itl_mean !== null && r.avg_itl_mean !== undefined) ? r.avg_itl_mean.toFixed(2) : 'N/A';
                 const pSpeed = (r.prefill_speed !== null && r.prefill_speed !== undefined) ? r.prefill_speed.toFixed(2) : 'N/A';
                 const dSpeed = (r.output_speed !== null && r.output_speed !== undefined) ? r.output_speed.toFixed(2) : 'N/A';
-                let statusStr = `<span style="color:#e06c75;">失败</span>`;
-                if (r.successful > 0 && !r.success_count_is_exact) {
-                    statusStr = `<span style="color:#98c379;">成功</span>`;
-                } else if (r.successful > 0 && r.successful < r.concurrency) {
-                    statusStr = `<span style="color:#e5c07b;">${r.successful}/${r.concurrency} 部分并发成功</span>`;
-                } else if (r.successful > 0) {
-                    statusStr = `<span style="color:#98c379;">${r.successful}/${r.concurrency} 并发成功</span>`;
-                }
+                const statusStr = r.successful ? `<span style="color:#98c379;">1/1 并发成功</span>` : `<span style="color:#e06c75;">失败</span>`;
 
                 tableHtml += `
                     <tr style="border-bottom:1px solid var(--border-color);">
@@ -3785,26 +2781,13 @@
             Chart.defaults.color = '#abb2bf';
             Chart.defaults.borderColor = '#3e4451';
 
-            const translationSeed = translationGeneration;
-            const [prefillChartLabel, decodeChartLabel, ttftChartLabel, itlChartLabel, emptyStateLabel] = await Promise.all([
-                translateUiString('总 Prefill 吞吐 (tokens/s)', translationSeed),
-                translateUiString('总 Decode 吞吐 (tokens/s)', translationSeed),
-                translateUiString('TTFT 首字延迟 (ms)', translationSeed),
-                translateUiString('ITL 均值延迟 (ms)', translationSeed),
-                translateUiString('无有效数据', translationSeed)
-            ]);
-
-            buildChart('prefill', 'prefillChart', prefillChartLabel, 'tokens/s', labels, prefillData, '#98c379', emptyStateLabel);
-            buildChart('decode', 'decodeChart', decodeChartLabel, 'tokens/s', labels, decodeData, '#c678dd', emptyStateLabel);
-            buildChart('ttft', 'ttftChart', ttftChartLabel, 'ms', labels, ttftData, '#61afef', emptyStateLabel);
-            buildChart('itl', 'itlChart', itlChartLabel, 'ms', labels, itlData, '#e5c07b', emptyStateLabel);
-
-            if (currentPageLanguage === PAGE_LANGUAGE.EN) {
-                schedulePageTranslation();
-            }
+            buildChart('prefill', 'prefillChart', '总 Prefill 吞吐 (tokens/s)', labels, prefillData, '#98c379');
+            buildChart('decode', 'decodeChart', '总 Decode 吞吐 (tokens/s)', labels, decodeData, '#c678dd');
+            buildChart('ttft', 'ttftChart', 'TTFT 首字延迟 (ms)', labels, ttftData, '#61afef');
+            buildChart('itl', 'itlChart', 'ITL 均值延迟 (ms)', labels, itlData, '#e5c07b');
         }
 
-        function buildChart(key, canvasId, label, yAxisTitle, labels, data, color, emptyStateLabel = '无有效数据') {
+        function buildChart(key, canvasId, label, labels, data, color) {
             if (charts[key]) {
                 charts[key].destroy();
             }
@@ -3819,7 +2802,7 @@
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: allNull ? `${label} (${emptyStateLabel})` : label,
+                        label: allNull ? label + ' (无有效数据)' : label,
                         data: data,
                         borderColor: color,
                         backgroundColor: color + '33',
@@ -3855,7 +2838,7 @@
                             grid: { color: '#3e4451' }
                         },
                         y: {
-                            title: { display: true, text: yAxisTitle, color: '#5c6370' },
+                            title: { display: true, text: label.split(' ')[1], color: '#5c6370' },
                             grid: { color: '#3e4451' },
                             beginAtZero: true
                         }
@@ -3868,14 +2851,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
