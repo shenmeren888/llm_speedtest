@@ -1,3 +1,12 @@
+本次更新点：
+
+核心是增加价格和性价比列
+1.增加价格和性价比列，性价比值=价格除以decode速度；
+2.价格列可以双击修改；
+
+
+
+
 # 🚀 本地大模型推理速度测试工具 v3 (chao魔改版)
 
 ![Version](https://img.shields.io/badge/version-3.0-blue.svg)
